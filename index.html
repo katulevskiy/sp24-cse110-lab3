@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pomodoro Timer First Brainstorm</title>
+    <link rel="icon" href="./favicon-16x16.png" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <h1>Pomodoro Timer First Brainstorm</h1>
+      <h2>Brainstorming Session</h2>
+      <h3>April 10, 2024</h3>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#attendance">Attendance</a></li>
+        <li><a href="#agenda">Agenda</a></li>
+        <li><a href="#unfinished">Unfinished Business</a></li>
+        <li><a href="#new_business">New Business</a></li>
+        <li><a href="#miscellaneous">Miscellaneous</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="attendance">
+        <h2>Attendance</h2>
+        <ul>
+          <li><strong>Some person</strong></li>
+          <!-- Example of strong for importance -->
+          <li>John Smith</li>
+          <li>Someone else</li>
+        </ul>
+      </section>
+
+      <section id="agenda">
+        <h2>Agenda</h2>
+        <ol>
+          <li>Introduction and objectives</li>
+          <li>Review of last meeting's action items</li>
+          <li>Discussion of new topics and strategies</li>
+          <li>Setting action items</li>
+        </ol>
+      </section>
+
+      <section id="unfinished">
+        <h2>Unfinished Business</h2>
+        <p>
+          Last week's pending tasks on <em>integrating</em> the backend and
+          frontend components.
+          <!-- Example of em for emphasis -->
+        </p>
+      </section>
+
+      <section id="new_business">
+        <h2>New Business</h2>
+        <p>
+          <i>Proposal for adopting new cloud services</i> to enhance
+          scalability.
+        </p>
+        <!-- Example of i for stylistic offset -->
+      </section>
+
+      <section id="miscellaneous">
+        <details>
+          <summary>Click to view Questions and Concerns</summary>
+          <div>
+            <strong>Questions:</strong>
+            <p>
+              Is the current project timeline <b>feasible</b> with the proposed
+              changes?
+              <!-- Example of b for stylistic strong -->
+            </p>
+          </div>
+          <div>
+            <strong>Concerns:</strong>
+            <p>Budget constraints related to new service adoption.</p>
+          </div>
+        </details>
+      </section>
+
+      <section>
+        <h2>Diagrams Presented</h2>
+        <img
+          src="path/to/diagram.jpg"
+          alt="Whiteboard diagram of proposed architecture"
+        />
+      </section>
+
+      <section>
+        <h2>Meeting Recordings</h2>
+        <audio controls>
+          <source src="./guitarsoundcheck-17433.mp3" type="audio/mp3" />
+          Your browser does not support the audio element.
+        </audio>
+        <video width="320" controls>
+          <source src="./sample-5s.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Meeting minutes compiled by:
+        <a href="mailto:daniil@example.com">Daniil Katulevskiy</a>
+      </p>
+      <!-- Example of a for linking -->
+    </footer>
+
+    <form>
+      <fieldset>
+        <legend>Feedback Form</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" /><br />
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" /><br />
+
+        <label for="position">Position:</label>
+        <input list="positions" id="position" name="position" />
+        <datalist id="positions">
+          <option value="Project Manager"></option>
+          <option value="Software Developer"></option>
+          <option value="Quality Assurance"></option></datalist
+        ><br />
+
+        <label for="department">Department:</label>
+        <select id="department" name="department">
+          <option value="Engineering">Engineering</option>
+          <option value="Human Resources">Human Resources</option>
+          <option value="Marketing">Marketing</option></select
+        ><br />
+
+        <label>Are you satisfied with the meeting outcomes?</label><br />
+        <input type="radio" id="yes" name="satisfaction" value="yes" />
+        <label for="yes">Yes</label><br />
+        <input type="radio" id="no" name="satisfaction" value="no" />
+        <label for="no">No</label><br />
+
+        <input type="checkbox" id="followup" name="followup" />
+        <label for="followup">Request follow-up meeting</label><br />
+        <label for="issue">Issue:</label>
+        <textarea id="issue" name="issue"></textarea><br />
+        <button type="submit">Submit Feedback</button>
+      </fieldset>
+    </form>
+  </body>
+</html>
