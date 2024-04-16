@@ -90,3 +90,36 @@ footer {
 footer p {
   margin: 0; /* Remove margin for alignment */
 }
+
+/* Main Content Layouts using Flexbox and Grid */
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+#attendance ul {
+  display: flex;
+  flex-direction: column; /* Stacking vertically, change to row for horizontal */
+  padding: 5px;
+  gap: 10px; /* Space between items */
+}
+
+section {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr; /* Single column layout on small screens */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack nav items vertically on small screens */
+  }
+}
