@@ -1,142 +1,143 @@
 /* Root variable definitions with fallbacks */
 :root {
-    --main-bg-color: #f4f4f9; /* Light grey background */
-    --text-color: #333;    /* Dark grey text */
-    --font-primary: 'Roboto', sans-serif; /* Google Font with fallback */
-    --link-color: #065A82; /* Blue link color */
-    --hover-color: rgba(6, 90, 130, 0.8); /* Slightly transparent blue for hover states */
+  --main-bg-color: #f4f4f9; /* Light grey background */
+  --text-color: #333; /* Dark grey text */
+  --font-primary: "Roboto", sans-serif; /* Google Font with fallback */
+  --link-color: #065a82; /* Blue link color */
+  --hover-color: rgba(
+    6,
+    90,
+    130,
+    0.8
+  ); /* Slightly transparent blue for hover states */
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-/* Reset some default browser styles */
+/* Universal base styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: var(--font-primary);
-    color: var(--text-color);
-    background-color: var(--main-bg-color);
-    padding: 20px;
+  font-family: var(--font-primary);
+  color: var(--text-color);
+  background-color: var(--main-bg-color);
+  padding: 20px;
 }
 
 /* Header Styling */
 header {
-    background-color: #FFF;
-    color: #065A82;
-    padding: 20px 10px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background-color: #fff;
+  color: #065a82;
+  padding: 20px 10px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Navigation Styling */
 nav {
-    background-color: #e0e0e0;
-    text-align: center;
-    padding: 10px 0;
+  background-color: #e0e0e0;
+  text-align: center;
+  padding: 10px 0;
 }
 
 nav ul {
-    list-style: none;
+  list-style: none;
 }
 
 nav li {
-    display: inline;
-    margin-right: 20px;
+  display: inline;
+  margin-right: 20px;
 }
 
 nav a {
-    text-decoration: none;
-    color: var(--link-color);
-    font-weight: bold;
+  text-decoration: none;
+  color: var(--link-color);
+  font-weight: bold;
 }
 
 nav a:hover {
-    background-color: var(--hover-color);
-    color: #FFF;
-    border-radius: 4px;
-    padding: 5px;
+  background-color: var(--hover-color);
+  color: #fff;
+  border-radius: 4px;
+  padding: 5px;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease; /* Adding transition for smooth hover effect */
 }
 
 /* Main Section Layout using Flexbox and Grid */
 main {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(500px, 1fr)
+  ); /* Increase min width to 500px */
+  gap: 20px;
+  padding: 20px;
 }
 
-#attendance ul {
-    display: flex;
-    flex-direction: row;
-    padding: 5px;
-    gap: 10px;
+/* Specific Styles for Lists in Sections to Prevent Overflow */
+#attendance ul,
+#agenda ol {
+  padding-left: 20px; /* Adjust padding to ensure it does not overflow */
+  margin-left: 0; /* Reset default margin */
 }
 
+/* General Style Adjustments for all Section Elements */
 section {
-    background: #FFF;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-/* Styling using various CSS selectors */
-[class^="section"] {
-    background-color: #f8f8f8;
-}
-
-[class*="important"] {
-    font-weight: bold;
-    color: #d9534f;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Ensures content stays within the border */
+  padding-left: 20px; /* Add padding to accommodate content properly */
 }
 
 /* Responsive adjustments with Media Queries */
 @media (max-width: 768px) {
-    main {
-        grid-template-columns: 1fr;
-    }
+  main {
+    grid-template-columns: 1fr;
+  }
 
-    nav ul {
-        flex-direction: column;
-    }
+  nav ul {
+    flex-direction: column;
+  }
 
-    nav li {
-        margin-bottom: 10px; /* Stack nav items vertically on smaller screens */
-    }
+  nav li {
+    margin-bottom: 10px; /* Stack nav items vertically on smaller screens */
+  }
 }
 
 /* Footer Styling */
 footer {
-    background-color: #ddd;
-    color: #333;
-    text-align: center;
-    padding: 12px 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+  background-color: #ddd;
+  color: #333;
+  text-align: center;
+  padding: 12px 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 footer p {
-    margin: 0;
+  margin: 0;
 }
 
-/* Advanced Pseudo-classes and CSS Grid */
-:has(.important) {
-    border: 2px solid #d9534f;
+/* CSS Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-details > summary:hover {
-    cursor: pointer;
-    color: var(--hover-color);
+section:hover {
+  animation: fadeIn 0.1s ease-in-out;
 }
-
-/* Inline and Internal CSS for demonstration */
-/* Example of internal CSS */
-<style>
-    .internal-css { color: #009688; }
-</style>
-
