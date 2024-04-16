@@ -1,182 +1,142 @@
-/* Root definitions for CSS variables */
+/* Root variable definitions with fallbacks */
 :root {
-  --main-bg-color: #f4f4f9; /* Light grey background */
-  --text-color: #333333; /* Dark grey text */
-  --font-primary: "Helvetica", "Arial", sans-serif;
-  --link-color: #0066cc; /* Blue link color */
-  --link-hover-color: #004499; /* Darker blue on hover */
-  --button-bg-color: #0056b3; /* Button background color */
+    --main-bg-color: #f4f4f9; /* Light grey background */
+    --text-color: #333;    /* Dark grey text */
+    --font-primary: 'Roboto', sans-serif; /* Google Font with fallback */
+    --link-color: #065A82; /* Blue link color */
+    --hover-color: rgba(6, 90, 130, 0.8); /* Slightly transparent blue for hover states */
 }
 
-/* Universal base styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Reset some default browser styles */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: var(--font-primary);
-  color: var(--text-color);
-  background-color: var(--main-bg-color);
-  padding: 20px;
+    font-family: var(--font-primary);
+    color: var(--text-color);
+    background-color: var(--main-bg-color);
+    padding: 20px;
 }
 
 /* Header Styling */
 header {
-  background-color: #0066cc; /* Blue background for better visibility */
-  color: white; /* White text color for contrast */
-  padding: 20px 10px;
-  text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-header h1,
-header h2,
-header h3 {
-  margin-bottom: 8px; /* Space between heading elements */
+    background-color: #FFF;
+    color: #065A82;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 /* Navigation Styling */
 nav {
-  background-color: #e0e0e0; /* Light grey for the navigation bar */
-  text-align: center;
-  padding: 10px 0;
-  border-top: 2px solid #c0c0c0; /* Border top for definition */
-  border-bottom: 2px solid #c0c0c0; /* Border bottom to match */
+    background-color: #e0e0e0;
+    text-align: center;
+    padding: 10px 0;
 }
 
 nav ul {
-  list-style: none; /* No bullets for navigation items */
-  padding: 0;
+    list-style: none;
 }
 
 nav li {
-  display: inline;
-  margin-right: 20px;
+    display: inline;
+    margin-right: 20px;
 }
 
 nav a {
-  text-decoration: none;
-  color: var(--link-color);
-  font-weight: 500; /* Medium weight for emphasis */
-  padding: 8px 16px; /* Padding for larger clickable area */
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: bold;
 }
 
-nav a:hover,
-nav a:active {
-  color: white; /* White text on hover */
-  background-color: var(
-    --link-hover-color
-  ); /* Darker background on hover/active */
-  border-radius: 4px; /* Rounded corners for style */
+nav a:hover {
+    background-color: var(--hover-color);
+    color: #FFF;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+/* Main Section Layout using Flexbox and Grid */
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+#attendance ul {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    gap: 10px;
+}
+
+section {
+    background: #FFF;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Styling using various CSS selectors */
+[class^="section"] {
+    background-color: #f8f8f8;
+}
+
+[class*="important"] {
+    font-weight: bold;
+    color: #d9534f;
+}
+
+/* Responsive adjustments with Media Queries */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin-bottom: 10px; /* Stack nav items vertically on smaller screens */
+    }
 }
 
 /* Footer Styling */
 footer {
-  background-color: #f5f5f5; /* Very light grey background */
-  color: #666; /* Medium grey text color */
-  text-align: center;
-  padding: 12px 20px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Shadow for lifting effect */
-  border-top: 1px solid #ccc; /* Subtle top border for definition */
+    background-color: #ddd;
+    color: #333;
+    text-align: center;
+    padding: 12px 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 footer p {
-  margin: 0; /* Remove margin for alignment */
+    margin: 0;
 }
 
-/* Main Content Layouts using Flexbox and Grid */
-main {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
+/* Advanced Pseudo-classes and CSS Grid */
+:has(.important) {
+    border: 2px solid #d9534f;
 }
 
-#attendance ul {
-  display: flex;
-  flex-direction: column; /* Stacking vertically, change to row for horizontal */
-  padding: 5px;
-  gap: 10px; /* Space between items */
+details > summary:hover {
+    cursor: pointer;
+    color: var(--hover-color);
 }
 
-section {
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
+/* Inline and Internal CSS for demonstration */
+/* Example of internal CSS */
+<style>
+    .internal-css { color: #009688; }
+</style>
 
-@media (max-width: 768px) {
-  main {
-    grid-template-columns: 1fr; /* Single column layout on small screens */
-  }
-
-  nav ul {
-    flex-direction: column; /* Stack nav items vertically on small screens */
-  }
-}
-
-/* Form and Interactive Element Styles */
-input[type="text"],
-input[type="date"],
-input[type="radio"],
-input[type="checkbox"],
-select,
-textarea {
-  padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%; /* Full width for better form alignment */
-}
-
-input[type="submit"],
-button {
-  background-color: var(--button-bg-color);
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-input[type="submit"]:hover,
-button:hover {
-  background-color: var(--link-hover-color);
-}
-
-label {
-  display: block;
-}
-
-/* Enhance accessibility of form elements */
-:focus {
-  outline: 3px solid var(--link-hover-color);
-  outline-offset: 2px;
-}
-
-/* Pseudo-classes and Advanced Selectors */
-a:hover,
-button:hover,
-input[type="submit"]:hover {
-  filter: brightness(90%);
-}
-
-/* CSS Variables with fallback */
-:root {
-  --primary-color: #3498db; /* Example primary color */
-  --primary-color-fallback: #2980b9;
-}
-
-body {
-  background-color: var(--primary-color, var(--primary-color-fallback));
-}
