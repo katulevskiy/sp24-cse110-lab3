@@ -5,6 +5,7 @@
   --font-primary: "Helvetica", "Arial", sans-serif;
   --link-color: #0066cc; /* Blue link color */
   --link-hover-color: #004499; /* Darker blue on hover */
+  --button-bg-color: #0056b3; /* Button background color */
 }
 
 /* Universal base styles */
@@ -139,7 +140,7 @@ textarea {
 
 input[type="submit"],
 button {
-  background-color: var(--link-color);
+  background-color: var(--button-bg-color);
   color: white;
   border: none;
   padding: 10px 15px;
@@ -161,4 +162,21 @@ label {
 :focus {
   outline: 3px solid var(--link-hover-color);
   outline-offset: 2px;
+}
+
+/* Pseudo-classes and Advanced Selectors */
+a:hover,
+button:hover,
+input[type="submit"]:hover {
+  filter: brightness(90%);
+}
+
+/* CSS Variables with fallback */
+:root {
+  --primary-color: #3498db; /* Example primary color */
+  --primary-color-fallback: #2980b9;
+}
+
+body {
+  background-color: var(--primary-color, var(--primary-color-fallback));
 }
