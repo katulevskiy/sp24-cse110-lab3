@@ -1,0 +1,68 @@
+/* Root definitions for CSS variables */
+:root {
+  --main-bg-color: #f4f4f9; /* Light grey background */
+  --text-color: #333333; /* Dark grey text */
+  --font-primary: "Helvetica", "Arial", sans-serif;
+}
+
+/* Universal base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--text-color);
+  background-color: var(--main-bg-color);
+}
+
+/* Responsive layout configurations */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+}
+
+/* Header styling */
+header {
+  background-color: #ffffff; /* White background for the header */
+  text-align: center;
+  padding: 20px 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation styling */
+nav {
+  background-color: #eeeeee; /* Lighter grey for the navigation bar */
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0077cc; /* Blue color for links */
+  font-weight: bold;
+}
+
+/* Footer styling */
+footer {
+  background-color: #dddddd; /* Slightly darker grey for the footer */
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
