@@ -141,3 +141,76 @@ footer p {
 section:hover {
   animation: fadeIn 0.1s ease-in-out;
 }
+
+fieldset {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-top: 20px;
+  background: #fff;
+}
+
+/* Style the legend */
+legend {
+  background: #003366;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Style inputs, select, and textarea */
+input[type="text"],
+input[type="date"],
+input[list],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Includes padding and border in the element's width */
+}
+
+/* Style input[type="radio"] and input[type="checkbox"] more subtly */
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0 10px 0 0;
+}
+
+/* Enhance the appearance of buttons */
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Add hover effect to inputs for better user experience */
+input[type="text"]:hover,
+input[type="date"]:hover,
+input[list]:hover,
+select:hover,
+textarea:hover {
+  border: 1px solid #888;
+}
+
+/* Customize the focus effect on form elements */
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[list]:focus,
+select:focus,
+textarea:focus {
+  border: 1px solid #555;
+}
