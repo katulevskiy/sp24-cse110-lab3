@@ -34,7 +34,7 @@ header {
   color: #065a82;
   padding: 20px 10px;
   text-align: center;
-  box-shadow: 0 2px 5px hsl(0, 0, 0.1);
+  box-shadow: 0 2px 5px hsl(1, 1, 1);
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 }
