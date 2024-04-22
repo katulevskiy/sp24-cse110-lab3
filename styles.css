@@ -93,7 +93,7 @@ main {
 
 /* General Style Adjustments for all Section Elements */
 section {
-  background: #fff;
+  background-color: #fff;
   border: 1px solid #ccc;
   padding: 2rem;
   border-radius: 8px;
@@ -101,7 +101,7 @@ section {
   overflow: hidden; /* Ensures content stays within the border */
   padding-left: 20px; /* Add padding to accommodate content properly */
   .h2 {
-    background: white;
+    background-color: white;
   }
 }
 
