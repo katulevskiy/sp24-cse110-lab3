@@ -100,7 +100,7 @@ section {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   overflow: hidden; /* Ensures content stays within the border */
   padding-left: 20px; /* Add padding to accommodate content properly */
-  & h2 {
+  .h2 {
     background: white;
   }
 }
@@ -123,7 +123,7 @@ section {
 /* Footer Styling */
 footer {
   display: flex;
-  allign-content: center;
+  align-content: center;
   justify-content: center;
   background-color: #ddd;
   color: #333;
