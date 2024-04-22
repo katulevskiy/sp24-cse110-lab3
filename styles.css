@@ -23,7 +23,7 @@
 
 body {
   font-family: var(--font-primary);
-  color: var(--text-color);
+  color: var(--text-color, red);
   background-color: var(--main-bg-color);
   padding: 20px;
 }
@@ -34,14 +34,14 @@ header {
   color: #065a82;
   padding: 20px 10px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px hsl(0, 0, 0.1);
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
 }
 
 /* Navigation Styling */
 nav {
-  background-color: #e0e0e0;
+  background-color: color-mix(in srgb, #e0e0e0 75%, white);
   text-align: center;
   padding: 10px 0;
   border-bottom-right-radius: 20px;
@@ -95,11 +95,14 @@ main {
 section {
   background: #fff;
   border: 1px solid #ccc;
-  padding: 10px;
+  padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   overflow: hidden; /* Ensures content stays within the border */
   padding-left: 20px; /* Add padding to accommodate content properly */
+  & h2 {
+    background: white;
+  }
 }
 
 /* Responsive adjustments with Media Queries */
@@ -113,12 +116,15 @@ section {
   }
 
   nav li {
-    margin-bottom: 10px; /* Stack nav items vertically on smaller screens */
+    margin-bottom: 1em; /* Stack nav items vertically on smaller screens */
   }
 }
 
 /* Footer Styling */
 footer {
+  display: flex;
+  allign-content: center;
+  justify-content: center;
   background-color: #ddd;
   color: #333;
   text-align: center;
@@ -126,6 +132,8 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
+  min-width: 0;
+  height: 50px;
 }
 
 footer p {
@@ -148,7 +156,7 @@ section:hover {
 
 fieldset {
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 5mm;
   margin-top: 20px;
   background: #fff;
 }
@@ -168,7 +176,7 @@ input[list],
 select,
 textarea {
   width: 100%;
-  padding: 10px;
+  padding: 0.13in;
   margin-top: 8px;
   margin-bottom: 16px;
   border: 1px solid #ccc;
@@ -201,6 +209,10 @@ button:hover {
   background-color: #218838;
 }
 
+button:active {
+  background-color: blue;
+}
+
 /* Add hover effect to inputs for better user experience */
 input[type="text"]:hover,
 input[type="date"]:hover,
@@ -217,4 +229,39 @@ input[list]:focus,
 select:focus,
 textarea:focus {
   border: 1px solid #555;
+  border-style: ridge;
+  border-color: green;
+  border-width: 1px;
+  border-radius: 2px;
+  text-decoration: underline;
+  text-align: left;
+  position: static;
+}
+
+.business {
+  color: green;
+}
+
+main > section {
+  color: var(--text-color);
+}
+
+footer ~ form {
+  background-color: #003366;
+}
+
+main section h2 {
+  background-color: white;
+}
+
+footer + form {
+  background-color: #003366;
+}
+
+main section.business {
+  background-color: white;
+}
+
+section:has(h2) {
+  background-color: white;
 }
